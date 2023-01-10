@@ -1,0 +1,12 @@
+apiVersion: vm.codeconnect.vmworld.com/v1alpha1
+kind: VmGroup
+metadata:
+  labels:
+    app.kubernetes.io/name: vmgroup
+    app.kubernetes.io/instance: vmgroup-sample
+    app.kubernetes.io/part-of: myoperator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: myoperator
+  name: vmgroup-sample
+spec:
+  # TODO(user): Add fields here

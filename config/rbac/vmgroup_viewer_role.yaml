@@ -1,0 +1,27 @@
+# permissions for end users to view vmgroups.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: vmgroup-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: myoperator
+    app.kubernetes.io/part-of: myoperator
+    app.kubernetes.io/managed-by: kustomize
+  name: vmgroup-viewer-role
+rules:
+- apiGroups:
+  - vm.codeconnect.vmworld.com
+  resources:
+  - vmgroups
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - vm.codeconnect.vmworld.com
+  resources:
+  - vmgroups/status
+  verbs:
+  - get
