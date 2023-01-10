@@ -60,8 +60,7 @@ type VmGroupReconciler struct {
 // +kubebuilder:rbac:groups=vm.codeconnect.vmworld.com,resources=vmgroups,verbs=get;list;watch;create;update;patch;delete
 // +kubebuilder:rbac:groups=vm.codeconnect.vmworld.com,resources=vmgroups/status,verbs=get;update;patch
 
-func (r *VmGroupReconciler) Reconcile(req ctrl.Request) (ctrl.Result, error) {
-	ctx := context.Background()
+func (r *VmGroupReconciler) Reconcile(ctx context.Context, req ctrl.Request) (ctrl.Result, error) {
 	log := r.Log.WithValues("vmgroup", req.NamespacedName)
 
 	vg := &vmv1alpha1.VmGroup{}
